@@ -43,3 +43,7 @@ Refusal records are the audit/ledger entries (see the #517 discussion).
 ## License
 
 MIT.
+
+---
+
+**PHM evidence chain** — aggregate ledger: [phm-evidence-ledger](https://github.com/PHM-Audit/phm-evidence-ledger) (5,000,086,001 units, four layers, open metrics + SHA-256 manifest) · method parent: [agent-action-verifier](https://github.com/PHM-Audit/agent-action-verifier) (AgentDojo-validated) · [PHM-Audit profile](https://github.com/PHM-Audit)
