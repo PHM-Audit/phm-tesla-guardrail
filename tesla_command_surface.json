@@ -1,0 +1,331 @@
+{
+ "provenance": "Parsed from teslamotors/vehicle-command main branch source (pkg/vehicle), fetched 2026-10-13",
+ "note": "Command surface inventory. The SDK passes parameters to the protocol layer WITHOUT local semantic validation (verified: ChangeChargeLimit forwards chargeLimitPercent directly). Bounds/conflict rules in the guard are OPERATOR-DECLARED example policy, not Tesla internal rules.",
+ "commands": [
+  {
+   "command": "AddChargeSchedule",
+   "source_file": "pkg/vehicle/charge.go",
+   "params": [
+    {
+     "name": "*ChargeSchedule",
+     "type": "schedule"
+    }
+   ]
+  },
+  {
+   "command": "RemoveChargeSchedule",
+   "source_file": "pkg/vehicle/charge.go",
+   "params": [
+    {
+     "name": "uint64",
+     "type": "id"
+    }
+   ]
+  },
+  {
+   "command": "BatchRemoveChargeSchedules",
+   "source_file": "pkg/vehicle/charge.go",
+   "params": [
+    {
+     "name": "home",
+     "type": "?"
+    },
+    {
+     "name": "work",
+     "type": "?"
+    },
+    {
+     "name": "bool",
+     "type": "other"
+    }
+   ]
+  },
+  {
+   "command": "AddPreconditionSchedule",
+   "source_file": "pkg/vehicle/charge.go",
+   "params": [
+    {
+     "name": "*PreconditionSchedule",
+     "type": "schedule"
+    }
+   ]
+  },
+  {
+   "command": "RemovePreconditionSchedule",
+   "source_file": "pkg/vehicle/charge.go",
+   "params": [
+    {
+     "name": "uint64",
+     "type": "id"
+    }
+   ]
+  },
+  {
+   "command": "BatchRemovePreconditionSchedules",
+   "source_file": "pkg/vehicle/charge.go",
+   "params": [
+    {
+     "name": "home",
+     "type": "?"
+    },
+    {
+     "name": "work",
+     "type": "?"
+    },
+    {
+     "name": "bool",
+     "type": "other"
+    }
+   ]
+  },
+  {
+   "command": "ChangeChargeLimit",
+   "source_file": "pkg/vehicle/charge.go",
+   "params": [
+    {
+     "name": "int32",
+     "type": "chargeLimitPercent"
+    }
+   ]
+  },
+  {
+   "command": "ChargeStart",
+   "source_file": "pkg/vehicle/charge.go",
+   "params": []
+  },
+  {
+   "command": "ChargeStop",
+   "source_file": "pkg/vehicle/charge.go",
+   "params": []
+  },
+  {
+   "command": "ChargeMaxRange",
+   "source_file": "pkg/vehicle/charge.go",
+   "params": []
+  },
+  {
+   "command": "SetChargingAmps",
+   "source_file": "pkg/vehicle/charge.go",
+   "params": [
+    {
+     "name": "int32",
+     "type": "amps"
+    }
+   ]
+  },
+  {
+   "command": "ChargeStandardRange",
+   "source_file": "pkg/vehicle/charge.go",
+   "params": []
+  },
+  {
+   "command": "OpenChargePort",
+   "source_file": "pkg/vehicle/charge.go",
+   "params": []
+  },
+  {
+   "command": "CloseChargePort",
+   "source_file": "pkg/vehicle/charge.go",
+   "params": []
+  },
+  {
+   "command": "ScheduleDeparture",
+   "source_file": "pkg/vehicle/charge.go",
+   "params": [
+    {
+     "name": "departAt",
+     "type": "?"
+    },
+    {
+     "name": "time.Duration",
+     "type": "offPeakEndTime"
+    },
+    {
+     "name": "preconditioning",
+     "type": "?"
+    },
+    {
+     "name": "ChargingPolicy",
+     "type": "offpeak"
+    }
+   ]
+  },
+  {
+   "command": "ScheduleCharging",
+   "source_file": "pkg/vehicle/charge.go",
+   "params": [
+    {
+     "name": "bool",
+     "type": "enabled"
+    },
+    {
+     "name": "time.Duration",
+     "type": "timeAfterMidnight"
+    }
+   ]
+  },
+  {
+   "command": "ClearScheduledDeparture",
+   "source_file": "pkg/vehicle/charge.go",
+   "params": []
+  },
+  {
+   "command": "SetLowPowerMode",
+   "source_file": "pkg/vehicle/charge.go",
+   "params": [
+    {
+     "name": "bool",
+     "type": "enable"
+    }
+   ]
+  },
+  {
+   "command": "SetKeepAccessoryPowerMode",
+   "source_file": "pkg/vehicle/charge.go",
+   "params": [
+    {
+     "name": "bool",
+     "type": "enable"
+    }
+   ]
+  },
+  {
+   "command": "SetSeatCooler",
+   "source_file": "pkg/vehicle/climate.go",
+   "params": [
+    {
+     "name": "Level",
+     "type": "level"
+    },
+    {
+     "name": "SeatPosition",
+     "type": "seat"
+    }
+   ]
+  },
+  {
+   "command": "ClimateOn",
+   "source_file": "pkg/vehicle/climate.go",
+   "params": []
+  },
+  {
+   "command": "ClimateOff",
+   "source_file": "pkg/vehicle/climate.go",
+   "params": []
+  },
+  {
+   "command": "AutoSeatAndClimate",
+   "source_file": "pkg/vehicle/climate.go",
+   "params": [
+    {
+     "name": "[]SeatPosition",
+     "type": "positions"
+    },
+    {
+     "name": "bool",
+     "type": "enabled"
+    }
+   ]
+  },
+  {
+   "command": "ChangeClimateTemp",
+   "source_file": "pkg/vehicle/climate.go",
+   "params": [
+    {
+     "name": "float32",
+     "type": "driverCelsius"
+    },
+    {
+     "name": "float32",
+     "type": "passengerCelsius"
+    }
+   ]
+  },
+  {
+   "command": "SetSeatHeater",
+   "source_file": "pkg/vehicle/climate.go",
+   "params": [
+    {
+     "name": "map[SeatPosition]Level",
+     "type": "levels"
+    }
+   ]
+  },
+  {
+   "command": "SetSteeringWheelHeater",
+   "source_file": "pkg/vehicle/climate.go",
+   "params": [
+    {
+     "name": "bool",
+     "type": "enabled"
+    }
+   ]
+  },
+  {
+   "command": "SetPreconditioningMax",
+   "source_file": "pkg/vehicle/climate.go",
+   "params": [
+    {
+     "name": "bool",
+     "type": "enabled"
+    },
+    {
+     "name": "bool",
+     "type": "manualOverride"
+    }
+   ]
+  },
+  {
+   "command": "SetBioweaponDefenseMode",
+   "source_file": "pkg/vehicle/climate.go",
+   "params": [
+    {
+     "name": "bool",
+     "type": "enabled"
+    },
+    {
+     "name": "bool",
+     "type": "manualOverride"
+    }
+   ]
+  },
+  {
+   "command": "SetCabinOverheatProtection",
+   "source_file": "pkg/vehicle/climate.go",
+   "params": [
+    {
+     "name": "bool",
+     "type": "enabled"
+    },
+    {
+     "name": "bool",
+     "type": "fanOnly"
+    }
+   ]
+  },
+  {
+   "command": "SetCabinOverheatProtectionTemperature",
+   "source_file": "pkg/vehicle/climate.go",
+   "params": [
+    {
+     "name": "Level",
+     "type": "level"
+    }
+   ]
+  },
+  {
+   "command": "SetClimateKeeperMode",
+   "source_file": "pkg/vehicle/climate.go",
+   "params": [
+    {
+     "name": "ClimateKeeperMode",
+     "type": "mode"
+    },
+    {
+     "name": "bool",
+     "type": "override"
+    }
+   ]
+  }
+ ]
+}

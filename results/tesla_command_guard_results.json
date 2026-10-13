@@ -1,0 +1,23 @@
+{
+ "test": "tesla vehicle-command pre-send guard gate (synthetic, example operator policy)",
+ "date": "2026-10-13 20:12:17",
+ "adk": null,
+ "guard_overhead_us_p50": 1.7,
+ "guard_overhead_us_p95": 2.02,
+ "n_frames": 1500,
+ "n_benign": 1497,
+ "n_injected": 3,
+ "FP": 0,
+ "FN": 0,
+ "failures": [],
+ "checks": {
+  "benign_FP_zero": true,
+  "injected_all_caught": true
+ },
+ "verdict": "PASS",
+ "honesty_notes": [
+  "synthetic command stream; example operator policy is NOT Tesla internal rules",
+  "no real vehicle field data; deterministic, no RNG",
+  "provenance of command surface: tesla_command_surface.json"
+ ]
+}
